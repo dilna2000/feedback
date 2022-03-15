@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Source+Serif+4:wght@200&display=swap" rel="stylesheet">
+    <style>
+        .card{
+            margin-top:10em;
+            border-radius:30px;
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+            padding:4em;
+            background-color: #eceaef;
+            text-align:center;
+        }
+        .line{
+            border-bottom: 2px solid rgba(0, 0,);
+            background:transparent;
+        }
+        .input-line{
+           
+            outline:none;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+            paddinh:10px;
+        }
+        .title{
+            margin-top:0.5em;
+            margin-bottom:-2em;
+            font-size:3em;
+            font-family: 'Nunito', sans-serif;
+            font-family: 'Source Serif 4', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="width:40%">
+        <div class="text-center title">
+            Give us Your Feedback!!
+        </div>
+        <div class="card">
+            <form action="/submit_feedback" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" class="input-line form-control"   id="exampleFormControlInput1" placeholder="Name">
+                </div><br/>
+                <div class="form-group">
+                    <input type="email" class="input-line form-control" id="exampleFormControlInput1" placeholder="Email ID">
+                </div><br/>
+                <div class="form-group">
+                    <textarea class="input-line form-control" placeholder="Feedback" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" style="background-color: #7d7db1;padding: 0.5em;border-radius: 10px;border: none;color: white;">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
