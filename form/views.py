@@ -13,3 +13,7 @@ def submit_feedback(request):
         feedb.save()
     res = render(request,'thanks.html')
     return res
+def about(request):
+    return render(request,'about.html')
+
+
